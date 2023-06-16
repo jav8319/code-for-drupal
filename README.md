@@ -1,6 +1,11 @@
 # code-for-drupal
 
+
+# codesamp3.ja
+
 A react component named DeliveryOnly.The select input field is rendered .The onChange event is assigned a callback function that updates the selected time using the setSelectedTime function. Within the select input field, If selectedDate is truthy and the data loading and error states (loading7 and error7) are false and the dates array has valid data, a filtering operation is performed on dates using the timeAvailable function.The dates array is filtered to include only dates that are at least one day in the future compared to the current time. This is done by comparing the milliseconds value of the date with the current time.For each valid date, the timeList array is further filtered using the timeAvailable function, which checks if a time is available for selection. It returns true if the time is in the future and has not been picked before, or if it is picked but more than 12 minutes have passed since it was picked.
 The filtered timeList array is then mapped to options in the select input field. Each option has a unique key set to time.time and displays the timeInt value as its text. This code was implemented in the web page of a food bussiness website to set the delivery time of an order. See live URl https://www.bitelandia.com/
 
+ # codesamp1.ja
  
+An asynchronous function within a graphql schema. It is triggered when a customer in the react frontend order one or more products by clicking on a button. It first checks if a user context exists, meaning the user is authenticated. If not, the function stops execution there, then, It finds the user's shopping list by querying the user from a MongoDB database using their ID and populates the referenced "shoplist" and "item" fields in the user document. If the user's shopping list is empty, an error message 'NO PRODUCTS ADDED' is returned. For each item in the user's shopping list, it finds the associated product in the database, checks its availability and quantity, updates its stock status, and then updates the order document with the product's quantity and total price. If the product is out of stock or the requested quantity is more than the product's quantity in stock, an error message is returned. This is accomplish by the first for loop. The function can be tested at https://lit-temple-40675.herokuapp.com/
